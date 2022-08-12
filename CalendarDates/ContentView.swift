@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // Send your list of dates to disable here.
+    @State var date = [Date(), Date(timeIntervalSince1970: 1661279400)]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        GeometryReader{ _ in
+            CustomDatePicker(disabledDates: date)
+                .frame(width: 250, height: 250)
+                .padding()
+        }
+        
     }
 }
 
@@ -19,3 +26,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

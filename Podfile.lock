@@ -1,0 +1,16 @@
+PODS:
+  - YMCalendar (1.0)
+
+DEPENDENCIES:
+  - YMCalendar
+
+SPEC REPOS:
+  trunk:
+    - YMCalendar
+
+SPEC CHECKSUMS:
+  YMCalendar: 8be58de9b1363443db25a3e39bd3d38b91447e04
+
+PODFILE CHECKSUM: 0c0a9e618d337d53f876949fe4afe90647a9c36f
+
+COCOAPODS: 1.11.2
