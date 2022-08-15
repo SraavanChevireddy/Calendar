@@ -13,6 +13,9 @@
 		3C84FCD528A6D93D00763CCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C84FCD428A6D93D00763CCA /* Preview Assets.xcassets */; };
 		3C84FCDF28A6DB9F00763CCA /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84FCDE28A6DB9F00763CCA /* CustomCalendar.swift */; };
 		3C84FCE228AAA7D700763CCA /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 3C84FCE128AAA7D700763CCA /* iPhoneNumberField */; };
+		3C84FCE428AAADBC00763CCA /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84FCE328AAADBC00763CCA /* BottomSheet.swift */; };
+		3C84FCE628AAAE3D00763CCA /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84FCE528AAAE3D00763CCA /* CustomCalendarView.swift */; };
+		3C84FCE828AAB88000763CCA /* PopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84FCE728AAB88000763CCA /* PopOverView.swift */; };
 		C96F3EC8F0C9603CFDB83B6F /* Pods_CalendarDates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A2B96E43A1D866779EC43 /* Pods_CalendarDates.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		3C84FCD128A6D93D00763CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C84FCD428A6D93D00763CCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C84FCDE28A6DB9F00763CCA /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
+		3C84FCE328AAADBC00763CCA /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		3C84FCE528AAAE3D00763CCA /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
+		3C84FCE728AAB88000763CCA /* PopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverView.swift; sourceTree = "<group>"; };
 		86CA6E3DB66BD0B9E9503D80 /* Pods-CalendarDates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarDates.debug.xcconfig"; path = "Target Support Files/Pods-CalendarDates/Pods-CalendarDates.debug.xcconfig"; sourceTree = "<group>"; };
 		942A58D49878CBDC034B533B /* Pods-CalendarDates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarDates.release.xcconfig"; path = "Target Support Files/Pods-CalendarDates/Pods-CalendarDates.release.xcconfig"; sourceTree = "<group>"; };
 		FF3A2B96E43A1D866779EC43 /* Pods_CalendarDates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarDates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +58,7 @@
 		3C84FCC128A6D93A00763CCA = {
 			isa = PBXGroup;
 			children = (
+				3C84FCE728AAB88000763CCA /* PopOverView.swift */,
 				3C84FCCC28A6D93A00763CCA /* CalendarDates */,
 				3C84FCCB28A6D93A00763CCA /* Products */,
 				5012DB5CAA8EAF43895192F6 /* Pods */,
@@ -75,6 +82,8 @@
 				3C84FCD128A6D93D00763CCA /* Assets.xcassets */,
 				3C84FCD328A6D93D00763CCA /* Preview Content */,
 				3C84FCDE28A6DB9F00763CCA /* CustomCalendar.swift */,
+				3C84FCE328AAADBC00763CCA /* BottomSheet.swift */,
+				3C84FCE528AAAE3D00763CCA /* CustomCalendarView.swift */,
 			);
 			path = CalendarDates;
 			sourceTree = "<group>";
@@ -218,7 +227,10 @@
 			files = (
 				3C84FCD028A6D93A00763CCA /* ContentView.swift in Sources */,
 				3C84FCCE28A6D93A00763CCA /* CalendarDatesApp.swift in Sources */,
+				3C84FCE828AAB88000763CCA /* PopOverView.swift in Sources */,
+				3C84FCE428AAADBC00763CCA /* BottomSheet.swift in Sources */,
 				3C84FCDF28A6DB9F00763CCA /* CustomCalendar.swift in Sources */,
+				3C84FCE628AAAE3D00763CCA /* CustomCalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

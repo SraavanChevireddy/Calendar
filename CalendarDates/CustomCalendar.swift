@@ -12,8 +12,14 @@ struct CustomDatePicker: UIViewRepresentable{
     
     var dateToDisable : Array<Date>
     
-    public init(disabledDates: Array<Date>){
+    @Binding var selectedDate : Date
+    @Binding var isSelected : Bool
+    @Environment(\.presentationMode) var canDismiss
+    
+    public init(disabledDates: Array<Date>,_ chooseDate: Binding<Date>,isSelected: Binding<Bool>){
         self.dateToDisable = disabledDates
+        self._selectedDate = chooseDate
+        self._isSelected = isSelected
     }
     
     private var calendar = Calendar.current
@@ -31,6 +37,9 @@ struct CustomDatePicker: UIViewRepresentable{
                 print("You cannot select this date")
             }else{
                 print("You selected the correct date")
+                parent.isSelected = true
+                parent.selectedDate = date
+                parent.canDismiss.wrappedValue.dismiss()
             }
         }
         
@@ -43,9 +52,9 @@ struct CustomDatePicker: UIViewRepresentable{
             })
             
             if !isDisableDate.isEmpty || weekend == 1 || weekend == 7{
-                return UIColor.gray
+                return UIColor(Color.secondary)
             }else{
-                return UIColor.red
+                return UIColor(Color.primary) // Dark Mode white, light mode black
             }
         }
         
@@ -54,7 +63,7 @@ struct CustomDatePicker: UIViewRepresentable{
         }
         
         func calendarView(_ view: YMCalendarView, numberOfEventsAtDate date: Date) -> Int {
-            1
+            0
         }
         
         func calendarView(_ view: YMCalendarView, dateRangeForEventAtIndex index: Int, date: Date) -> DateRange? {
@@ -102,5 +111,21 @@ struct CustomDatePicker: UIViewRepresentable{
     
     typealias UIViewType = YMCalendarView
     
+    
+}
+
+
+struct CalendarWeekbarView: UIViewRepresentable {
+    
+    func makeUIView(context: UIViewRepresentableContext<CalendarWeekbarView>) -> some YMCalendarWeekBarView {
+        
+        let calendarWeekBarView = YMCalendarWeekBarView()
+        calendarWeekBarView.calendar = Calendar.current
+        calendarWeekBarView.backgroundColor = .clear
+        return calendarWeekBarView
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<CalendarWeekbarView>) {
+    }
     
 }

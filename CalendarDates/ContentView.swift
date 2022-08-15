@@ -9,11 +9,15 @@ import SwiftUI
 import iPhoneNumberField
 
 struct ContentView: View {
-    
-    // Send your list of dates to disable here.
-    @State var date = [Date(), Date(timeIntervalSince1970: 1661279400)]
     @State var phone = ""
+    
     @State var selectedTimeZone = "Eastern Standard Time"
+    @State var showCalendarPicker = false
+    @State var isScheduled = false
+    
+    @State var selectDate = Date()
+    @State var showPopOverView = false
+    @State var showBlurView = false
     
     @State var timeZones = [
         "Eastern Standard Time",
@@ -23,11 +27,6 @@ struct ContentView: View {
     ]
     
     var body: some View {
-//        GeometryReader{ _ in
-//            CustomDatePicker(disabledDates: date)
-//                .frame(width: 250, height: 250)
-//                .padding()
-//        }
         
         NavigationView{
             Form{
@@ -48,8 +47,59 @@ struct ContentView: View {
                 } header: {
                     Text("Time Zone*")
                 }
-            }
+                
+                Section{
+                    HStack(alignment: .center) {
+                        if isScheduled{
+                            Text(selectDate, style: .date)
+                        }else{
+                            Text("Choose a Date")
+                        }
+                        Spacer()
+                        Image(systemName: "calendar")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        
+                    }.onTapGesture {
+                        showCalendarPicker.toggle()
+                    }
+                } header:{
+                    Text("Choose Date *")
+                }
+                
+                
+            }.halfSheet(showSheet: $showCalendarPicker, halfSheet: {
+                CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+            }, onEnd: {
+                print("Nothing at the moment!")
+            })
+                .overlay(content: {
+                    if showPopOverView{
+                        PopOverView{
+                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+                        }
+                    }else if showBlurView{
+                        PopOverView{
+                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+                        }.background(.thickMaterial)
+                    }
+                    else{
+                        EmptyView()
+                    }
+                })
             .navigationTitle("Schedule a Call")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("PopOver"){
+                        showPopOverView.toggle()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("BlurView"){
+                        showBlurView.toggle()
+                    }
+                }
+            }
         }.navigationBarTitleDisplayMode(.inline)
         
     }
