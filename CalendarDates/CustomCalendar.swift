@@ -51,15 +51,18 @@ struct CustomDatePicker: UIViewRepresentable{
                 (NSCalendar.current.compare($0, to: date, toGranularity: .day) == .orderedSame)
             })
             
-            if !isDisableDate.isEmpty || weekend == 1 || weekend == 7{
+            if weekend == 1 || weekend == 7{
+                return UIColor(Color.red)
+            }else if !isDisableDate.isEmpty{
                 return UIColor(Color.secondary)
-            }else{
+            }
+            else{
                 return UIColor(Color.primary) // Dark Mode white, light mode black
             }
         }
         
         func calendarViewAppearance(_ view: YMCalendarView, dayLabelFontAtDate date: Date) -> UIFont {
-            UIFont(name: "Arial Rounded MT Bold", size: 12)!
+            UIFont(name: "Arial Rounded MT Bold", size: 18)!
         }
         
         func calendarView(_ view: YMCalendarView, numberOfEventsAtDate date: Date) -> Int {
@@ -73,6 +76,8 @@ struct CustomDatePicker: UIViewRepresentable{
         func calendarView(_ view: YMCalendarView, eventViewForEventAtIndex index: Int, date: Date) -> YMEventView {
             return YMEventView(frame: CGRect.zero)
         }
+        
+        
         
         var parent: CustomDatePicker
         
@@ -121,7 +126,8 @@ struct CalendarWeekbarView: UIViewRepresentable {
         
         let calendarWeekBarView = YMCalendarWeekBarView()
         calendarWeekBarView.calendar = Calendar.current
-        calendarWeekBarView.backgroundColor = .clear
+        calendarWeekBarView.gradientColors = [UIColor.clear, UIColor.clear]
+        
         return calendarWeekBarView
     }
     

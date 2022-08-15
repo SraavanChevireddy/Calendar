@@ -106,7 +106,7 @@ public class YMCalendarWeekBarView: UIView, YMCalendarWeekBarAppearance {
         
         let appearance = self.appearance ?? self
         
-        let horizontalGridWidth = appearance.weekBarHorizontalGridWidth(in: self)
+        let horizontalGridWidth = CGFloat(0)
         if horizontalGridWidth > 0 {
             c?.setStrokeColor(appearance.weekBarHorizontalGridColor(in: self).cgColor)
             c?.setLineWidth(horizontalGridWidth)
@@ -124,7 +124,7 @@ public class YMCalendarWeekBarView: UIView, YMCalendarWeekBarAppearance {
             c?.strokePath()
         }
         
-        let verticalGridWidth = appearance.weekBarVerticalGridWidth(in: self)
+        let verticalGridWidth = CGFloat(0)
         if verticalGridWidth > 0 {
             c?.setStrokeColor(appearance.weekBarVerticalGridColor(in: self).cgColor)
             c?.setLineWidth(verticalGridWidth)

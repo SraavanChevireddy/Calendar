@@ -814,9 +814,9 @@ extension YMCalendarView: UICollectionViewDataSource {
         view.numberOfRows = numRows
         
         let viewAppearance = appearance ?? self
-        view.horizontalGridColor = viewAppearance.horizontalGridColor(in: self)
+        view.horizontalGridColor = UIColor.clear
         view.horizontalGridWidth = viewAppearance.horizontalGridWidth(in: self)
-        view.verticalGridColor = viewAppearance.verticalGridColor(in: self)
+        view.verticalGridColor = UIColor.clear
         view.verticalGridWidth = viewAppearance.verticalGridWidth(in: self)
         
         view.setNeedsDisplay()
