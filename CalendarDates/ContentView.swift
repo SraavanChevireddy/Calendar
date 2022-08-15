@@ -69,18 +69,20 @@ struct ContentView: View {
                 
                 
             }.halfSheet(showSheet: $showCalendarPicker, halfSheet: {
-                CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+                CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled, hidePop: $showPopOverView)
             }, onEnd: {
                 print("Nothing at the moment!")
             })
                 .overlay(content: {
                     if showPopOverView{
                         PopOverView{
-                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled, hidePop: $showPopOverView)
+                                .frame(height: 400)
                         }
                     }else if showBlurView{
                         PopOverView{
-                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled)
+                            CustomCalendarView(selectedDate: $selectDate, isDateSelected: $isScheduled, hidePop: $showBlurView)
+                                .frame(height: 400)
                         }.background(.thickMaterial)
                     }
                     else{
