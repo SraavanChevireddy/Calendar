@@ -12,6 +12,7 @@
 		3C84FCD228A6D93D00763CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C84FCD128A6D93D00763CCA /* Assets.xcassets */; };
 		3C84FCD528A6D93D00763CCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C84FCD428A6D93D00763CCA /* Preview Assets.xcassets */; };
 		3C84FCDF28A6DB9F00763CCA /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84FCDE28A6DB9F00763CCA /* CustomCalendar.swift */; };
+		3C84FCE228AAA7D700763CCA /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 3C84FCE128AAA7D700763CCA /* iPhoneNumberField */; };
 		C96F3EC8F0C9603CFDB83B6F /* Pods_CalendarDates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A2B96E43A1D866779EC43 /* Pods_CalendarDates.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96F3EC8F0C9603CFDB83B6F /* Pods_CalendarDates.framework in Frameworks */,
+				3C84FCE228AAA7D700763CCA /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,7 @@
 			);
 			name = CalendarDates;
 			packageProductDependencies = (
+				3C84FCE128AAA7D700763CCA /* iPhoneNumberField */,
 			);
 			productName = CalendarDates;
 			productReference = 3C84FCCA28A6D93A00763CCA /* CalendarDates.app */;
@@ -143,6 +146,7 @@
 			);
 			mainGroup = 3C84FCC128A6D93A00763CCA;
 			packageReferences = (
+				3C84FCE028AAA7D700763CCA /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 			);
 			productRefGroup = 3C84FCCB28A6D93A00763CCA /* Products */;
 			projectDirPath = "";
@@ -419,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C84FCE028AAA7D700763CCA /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C84FCE128AAA7D700763CCA /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C84FCE028AAA7D700763CCA /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C84FCC228A6D93A00763CCA /* Project object */;
 }

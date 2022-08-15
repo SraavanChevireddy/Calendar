@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "iPhoneNumberField",
+        "repositoryURL": "https://github.com/MojtabaHs/iPhoneNumberField",
+        "state": {
+          "branch": "main",
+          "revision": "317bde4bd6d813fd9952a9e1b215bd24ea59940d",
+          "version": null
+        }
+      },
+      {
+        "package": "PhoneNumberKit",
+        "repositoryURL": "https://github.com/marmelroy/PhoneNumberKit",
+        "state": {
+          "branch": null,
+          "revision": "104a53d62c55aa5794faf30b29ccad319653b552",
+          "version": "3.4.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
